@@ -8,6 +8,7 @@
 
 import UIKit
 import Intents
+import PaymentsCore
 
 class ViewController: UIViewController {
 

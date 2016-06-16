@@ -20,20 +20,6 @@
                ReferencedContainer = "container:Payments.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "599F7E381D12644900C770D2"
-               BuildableName = "Payments.app"
-               BlueprintName = "Payments"
-               ReferencedContainer = "container:Payments.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -43,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "599F7E381D12644900C770D2"
-            BuildableName = "Payments.app"
-            BlueprintName = "Payments"
-            ReferencedContainer = "container:Payments.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -65,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "599F7E381D12644900C770D2"
-            BuildableName = "Payments.app"
-            BlueprintName = "Payments"
+            BlueprintIdentifier = "599F7E7B1D12EBA200C770D2"
+            BuildableName = "PaymentsCore.framework"
+            BlueprintName = "PaymentsCore"
             ReferencedContainer = "container:Payments.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -84,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "599F7E381D12644900C770D2"
-            BuildableName = "Payments.app"
-            BlueprintName = "Payments"
+            BlueprintIdentifier = "599F7E7B1D12EBA200C770D2"
+            BuildableName = "PaymentsCore.framework"
+            BlueprintName = "PaymentsCore"
             ReferencedContainer = "container:Payments.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

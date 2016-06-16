@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "0800"
-   version = "1.3">
+   wasCreatedForAppExtension = "YES"
+   version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -14,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "599F7E7B1D12EBA200C770D2"
-               BuildableName = "PaymentsCore.framework"
-               BlueprintName = "PaymentsCore"
+               BlueprintIdentifier = "599F7E511D12655100C770D2"
+               BuildableName = "PaymentsIntentExtension.appex"
+               BlueprintName = "PaymentsIntentExtension"
                ReferencedContainer = "container:Payments.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "599F7E381D12644900C770D2"
-            BuildableName = "Payments.app"
-            BlueprintName = "Payments"
+            BlueprintIdentifier = "599F7E511D12655100C770D2"
+            BuildableName = "PaymentsIntentExtension.appex"
+            BlueprintName = "PaymentsIntentExtension"
             ReferencedContainer = "container:Payments.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -57,14 +58,15 @@
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
+      allowLocationSimulation = "YES"
+      launchAutomaticallySubstyle = "2">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
@@ -83,7 +85,8 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES">
+      debugDocumentVersioning = "YES"
+      launchAutomaticallySubstyle = "2">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference

@@ -22,11 +22,8 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
     }
   
     // MARK: - INUIHostedViewControlling
-    
-    // Prepare your view controller for the interaction to handle.
+  
     func configure(with interaction: INInteraction!, context: INUIHostedViewContext, completion: ((CGSize) -> Void)!) {
-        // Do configuration here, including preparing views and calculating a desired size for presentation.
-        
         if let completion = completion {
             completion(self.desiredSize)
         }
@@ -35,5 +32,4 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
     var desiredSize: CGSize {
         return self.extensionContext!.hostedViewMaximumAllowedSize
     }
-    
 }

@@ -9,7 +9,6 @@
 import Intents
 
 class IntentHandler: INExtension {
-  
   override func handler(for intent: INIntent) -> AnyObject? {
     if intent is INSendPaymentIntent {
       return SendPaymentIntentHandler()
@@ -17,5 +16,4 @@ class IntentHandler: INExtension {
     
     return nil
   }
-  
 }
