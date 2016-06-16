@@ -14,6 +14,8 @@ class SendPaymentIntentHandler: NSObject, INSendPaymentIntentHandling {
   
   func handle(sendPayment intent: INSendPaymentIntent, completion: (INSendPaymentIntentResponse) -> Swift.Void) {
     if let _ = intent.payee, let _ = intent.currencyAmount {
+      // Handle the payment here!
+      
       completion(INSendPaymentIntentResponse.init(code: .success, userActivity: nil))
     }
     else {
@@ -39,15 +41,11 @@ class SendPaymentIntentHandler: NSObject, INSendPaymentIntentHandling {
       
       switch matchedContacts.count {
       case 2 ... Int.max:
-        completion(INPersonResolutionResult.needsValue())
-        
-        /*
-        let disambiguationOptions: [INPerson] = matchingContacts.map { contact in
+        let disambiguationOptions: [INPerson] = matchedContacts.map { contact in
           return contact.inPerson()
         }
         
         resolutionResult = INPersonResolutionResult.disambiguation(with: disambiguationOptions)
-         */
       case 1:
         let recipientMatched = matchedContacts[0].inPerson()
         print("Matched a recipient: \(recipientMatched.displayName)")
