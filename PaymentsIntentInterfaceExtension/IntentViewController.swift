@@ -23,7 +23,6 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
     gradientLayer.position = self.view.layer.position
     gradientLayer.startPoint = CGPoint(x: 0, y: 0)
     gradientLayer.endPoint = CGPoint(x: 0, y: 1)
-    // gradientLayer.colors = [#colorLiteral(red: 0.2941176471, green: 0.5921568627, blue: 0.2862745098, alpha: 1).cgColor, #colorLiteral(red: 0.4235294118, green: 0.7176470588, blue: 0.4117647059, alpha: 1).cgColor]
     gradientLayer.colors = [#colorLiteral(red: 0, green: 0.2705882353, blue: 0.4862745098, alpha: 1), #colorLiteral(red: 0, green: 0.4745098039, blue: 0.7568627451, alpha: 1)].map { $0.cgColor }
     
     self.view.layer.insertSublayer(gradientLayer, at: 0)
@@ -43,9 +42,6 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
       completion(self.desiredSize)
     }
   }
-  
-  // R: 75 G: 151 B: 73
-  // R: 108 G: 183 B: 105
   
   /// Siri should always use the largest possible size here. This makes it
   /// easy for us to display our UI, since we don't need to do any height
