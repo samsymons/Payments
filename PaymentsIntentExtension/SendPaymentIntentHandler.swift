@@ -10,14 +10,18 @@ import Intents
 import PaymentsCore
 
 class SendPaymentIntentHandler: NSObject, INSendPaymentIntentHandling {
+  let paymentThreshold: Int = 50
   
   // MARK: - INSendPaymentIntentHandling
   
   func handle(sendPayment intent: INSendPaymentIntent, completion: (INSendPaymentIntentResponse) -> Swift.Void) {
-    if let _ = intent.payee, let _ = intent.currencyAmount {
-      // Handle the payment here!
-      
-      completion(INSendPaymentIntentResponse.init(code: .success, userActivity: nil))
+    if let _ = intent.payee, let currentAmount = intent.currencyAmount {
+      if Int(currentAmount.amount) >= paymentThreshold {
+        completion(INSendPaymentIntentResponse.init(code: .failureRequiringAppLaunch, userActivity: nil))
+      }
+      else {
+        completion(INSendPaymentIntentResponse.init(code: .success, userActivity: nil))
+      }
     }
     else {
       completion(INSendPaymentIntentResponse.init(code: .success, userActivity: nil))
