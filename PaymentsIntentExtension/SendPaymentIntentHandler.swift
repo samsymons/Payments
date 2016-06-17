@@ -10,6 +10,7 @@ import Intents
 import PaymentsCore
 
 class SendPaymentIntentHandler: NSObject, INSendPaymentIntentHandling {
+  
   // MARK: - INSendPaymentIntentHandling
   
   func handle(sendPayment intent: INSendPaymentIntent, completion: (INSendPaymentIntentResponse) -> Swift.Void) {
@@ -23,13 +24,16 @@ class SendPaymentIntentHandler: NSObject, INSendPaymentIntentHandling {
     }
   }
   
+  /// This function takes what Siri believes to be the intended recipient of the
+  /// payment and determines whether it is valid or not. Here, the app needs to
+  /// check the payee against the list of contacts and determine whether there
+  /// is a match. It also needs to make sure that multiple contacts don't match
+  /// the name. If so, it passes back the `disambiguation` option.
   func resolvePayee(forSendPayment intent: INSendPaymentIntent, with completion: (INPersonResolutionResult) -> Swift.Void) {
     if let payee = intent.payee {
       let contacts = PaymentsContact.allContacts()
       var resolutionResult: INPersonResolutionResult?
       var matchedContacts: [PaymentsContact] = []
-      
-      print(contacts)
       
       for contact in contacts {
         print("Checking '\(contact.name)' against '\(payee.displayName)'")
@@ -62,4 +66,5 @@ class SendPaymentIntentHandler: NSObject, INSendPaymentIntentHandling {
       completion(INPersonResolutionResult.needsValue())
     }
   }
+  
 }
