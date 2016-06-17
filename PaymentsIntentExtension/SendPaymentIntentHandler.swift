@@ -15,9 +15,15 @@ class SendPaymentIntentHandler: NSObject, INSendPaymentIntentHandling {
   // MARK: - INSendPaymentIntentHandling
   
   func handle(sendPayment intent: INSendPaymentIntent, completion: (INSendPaymentIntentResponse) -> Swift.Void) {
-    if let _ = intent.payee, let currentAmount = intent.currencyAmount {
-      if Int(currentAmount.amount) >= paymentThreshold {
-        completion(INSendPaymentIntentResponse.init(code: .failureRequiringAppLaunch, userActivity: nil))
+    if let _ = intent.payee, let currencyAmount = intent.currencyAmount {
+      if Int(currencyAmount.amount) >= paymentThreshold {
+        let userActivity = NSUserActivity()
+        userActivity.userInfo = ["currencyAmount": Int(currencyAmount.amount)]
+        
+        // By providing a userActivity to the intent response, Siri will open
+        // up the app and continue the payment there. This is handled by a delegate
+        // method in AppDelegate.swift.
+        completion(INSendPaymentIntentResponse.init(code: .success, userActivity: userActivity))
       }
       else {
         completion(INSendPaymentIntentResponse.init(code: .success, userActivity: nil))

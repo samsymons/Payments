@@ -18,20 +18,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom UI Goes Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZ5-2I-zhH">
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIw-9W-9s0" userLabel="Container">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAP-yP-3yI" userLabel="Avatar">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="Oni-pw-2Xz"/>
+                                            <constraint firstAttribute="height" constant="80" id="mV4-d9-uUt"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom UI Goes Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZ5-2I-zhH">
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="RZ5-2I-zhH" firstAttribute="leading" secondItem="ZIw-9W-9s0" secondAttribute="leading" id="5vb-sc-U9n"/>
+                                    <constraint firstAttribute="bottom" secondItem="RZ5-2I-zhH" secondAttribute="bottom" id="Ddj-SV-lXQ"/>
+                                    <constraint firstItem="wAP-yP-3yI" firstAttribute="centerX" secondItem="ZIw-9W-9s0" secondAttribute="centerX" id="IEV-g8-S4l"/>
+                                    <constraint firstItem="RZ5-2I-zhH" firstAttribute="top" secondItem="wAP-yP-3yI" secondAttribute="bottom" constant="10" id="JiJ-Jv-d5z"/>
+                                    <constraint firstItem="wAP-yP-3yI" firstAttribute="top" secondItem="ZIw-9W-9s0" secondAttribute="top" id="WdI-zz-BDN"/>
+                                    <constraint firstAttribute="trailing" secondItem="RZ5-2I-zhH" secondAttribute="trailing" id="h7O-hI-R03"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="RZ5-2I-zhH" firstAttribute="centerY" secondItem="zMn-AG-sqS" secondAttribute="centerY" id="N7b-lb-mYl"/>
-                            <constraint firstItem="RZ5-2I-zhH" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="Vgj-Mj-8sH"/>
+                            <constraint firstItem="ZIw-9W-9s0" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="C4Y-g8-wSK"/>
+                            <constraint firstItem="ZIw-9W-9s0" firstAttribute="centerY" secondItem="zMn-AG-sqS" secondAttribute="centerY" id="tNX-14-cIh"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="150"/>
+                    <connections>
+                        <outlet property="avatarView" destination="wAP-yP-3yI" id="0ua-sB-3gs"/>
+                        <outlet property="nameLabel" destination="RZ5-2I-zhH" id="a1h-JH-AyT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
