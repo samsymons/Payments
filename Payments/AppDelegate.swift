@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
-    if let userInfo = userActivity.userInfo, let _ = userActivity.interaction {
-      print("Do stuff here!")
+    if let interaction = userActivity.interaction, let intent = interaction.intent as? INSendPaymentIntent, let payee = intent.payee {
+      print("Paying \(payee.displayName) \(intent.currencyAmount!.amount!)")
     }
     
     return true
