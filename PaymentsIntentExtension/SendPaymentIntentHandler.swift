@@ -16,9 +16,9 @@ class SendPaymentIntentHandler: NSObject, INSendPaymentIntentHandling {
   
   func handle(sendPayment intent: INSendPaymentIntent, completion: (INSendPaymentIntentResponse) -> Swift.Void) {
     if let _ = intent.payee, let currencyAmount = intent.currencyAmount {
-      if Int(currencyAmount.amount) >= paymentThreshold {
+      if Int(currencyAmount.amount!) >= paymentThreshold {
         let userActivity = NSUserActivity()
-        userActivity.userInfo = ["currencyAmount": Int(currencyAmount.amount)]
+        userActivity.userInfo = ["currencyAmount": Int(currencyAmount.amount!)]
         
         // By providing a userActivity to the intent response, Siri will open
         // up the app and continue the payment there. This is handled by a delegate
@@ -64,9 +64,6 @@ class SendPaymentIntentHandler: NSObject, INSendPaymentIntentHandling {
         let recipientMatched = matchedContacts[0].inPerson()
         print("Matched a recipient: \(recipientMatched.displayName)")
         resolutionResult = INPersonResolutionResult.success(with: recipientMatched)
-      case 0:
-        print("This is unsupported")
-        resolutionResult = INPersonResolutionResult.unsupported(with: INIntentResolutionResultUnsupportedReason.none)
       default:
         break
       }
