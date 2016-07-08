@@ -98,6 +98,7 @@
 		599F7E7E1D12EBA200C770D2 /* PaymentsCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentsCore.h; sourceTree = "<group>"; };
 		599F7E801D12EBA200C770D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		599F7E891D12ED9A00C770D2 /* PaymentsContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsContact.swift; sourceTree = "<group>"; };
+		59BFA0571D303D54000790B2 /* Payments.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Payments.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +162,7 @@
 		599F7E3B1D12644900C770D2 /* Payments */ = {
 			isa = PBXGroup;
 			children = (
+				59BFA0571D303D54000790B2 /* Payments.entitlements */,
 				599F7E3C1D12644900C770D2 /* AppDelegate.swift */,
 				599F7E3E1D12644900C770D2 /* ViewController.swift */,
 				599F7E401D12644900C770D2 /* Main.storyboard */,
@@ -313,6 +315,11 @@
 						DevelopmentTeam = 3K7F93EG9H;
 						DevelopmentTeamName = "Sam Symons";
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Siri = {
+								enabled = 1;
+							};
+						};
 					};
 					599F7E511D12655100C770D2 = {
 						CreatedOnToolsVersion = 8.0;
@@ -566,9 +573,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Payments/Payments.entitlements;
 				INFOPLIST_FILE = Payments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samsymons.Payments;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samsymons.payments-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -579,9 +587,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Payments/Payments.entitlements;
 				INFOPLIST_FILE = Payments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samsymons.Payments;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samsymons.payments-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -592,7 +601,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = PaymentsIntentExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samsymons.Payments.PaymentsIntentExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samsymons.payments-app.PaymentsIntentExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -604,7 +613,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = PaymentsIntentExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samsymons.Payments.PaymentsIntentExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samsymons.payments-app.PaymentsIntentExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -616,7 +625,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = PaymentsIntentInterfaceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samsymons.Payments.PaymentsIntentInterfaceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samsymons.payments-app.PaymentsIntentInterfaceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -628,7 +637,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = PaymentsIntentInterfaceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samsymons.Payments.PaymentsIntentInterfaceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samsymons.payments-app.PaymentsIntentInterfaceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -647,7 +656,7 @@
 				INFOPLIST_FILE = PaymentsCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samsymons.PaymentsCore;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samsymons.payments-app-core";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -670,7 +679,7 @@
 				INFOPLIST_FILE = PaymentsCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samsymons.PaymentsCore;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samsymons.payments-app-core";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -699,6 +708,7 @@
 				599F7E4D1D12644900C770D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		599F7E5A1D12655200C770D2 /* Build configuration list for PBXNativeTarget "PaymentsIntentExtension" */ = {
 			isa = XCConfigurationList;
@@ -707,6 +717,7 @@
 				599F7E5C1D12655200C770D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		599F7E741D126E4200C770D2 /* Build configuration list for PBXNativeTarget "PaymentsIntentInterfaceExtension" */ = {
 			isa = XCConfigurationList;
@@ -715,6 +726,7 @@
 				599F7E761D126E4200C770D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		599F7E851D12EBA200C770D2 /* Build configuration list for PBXNativeTarget "PaymentsCore" */ = {
 			isa = XCConfigurationList;
@@ -723,6 +735,7 @@
 				599F7E871D12EBA200C770D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
