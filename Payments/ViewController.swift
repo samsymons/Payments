@@ -16,7 +16,8 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     
     INPreferences.requestSiriAuthorization() { (status) in
-      print("New status: \(status)")
+      print("New status: \(status.rawValue)")
     }
   }
+  
 }
