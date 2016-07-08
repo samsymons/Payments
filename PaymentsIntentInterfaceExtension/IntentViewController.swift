@@ -48,7 +48,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
   /// calculation of any kind. Auto Layout in the returned view controller
   /// will make sure that everything looks good.
   var desiredSize: CGSize {
-    return self.extensionContext!.hostedViewMaximumAllowedSize
+    return self.extensionContext!.hostedViewMinimumAllowedSize
   }
   
 }

@@ -2,7 +2,7 @@
 //  PaymentsCore.h
 //  PaymentsCore
 //
-//  Created by Symons, Sam(AWF) on 16/06/16.
+//  Created by Sam Symons on 16/06/16.
 //  Copyright © 2016 Sam Symons. All rights reserved.
 //
 

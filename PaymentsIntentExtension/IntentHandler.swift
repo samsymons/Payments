@@ -2,7 +2,7 @@
 //  IntentHandler.swift
 //  PaymentsIntentExtension
 //
-//  Created by Symons, Sam(AWF) on 15/06/16.
+//  Created by Sam Symons on 15/06/16.
 //  Copyright © 2016 Sam Symons. All rights reserved.
 //
 
